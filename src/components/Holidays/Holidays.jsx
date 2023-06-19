@@ -1,35 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { marketHolidays } from '../../services/dataFetching';
-
-// const calendar = document.querySelector(".calendar-list");
-// const holydays = document.querySelector('.calendar-table');
-
-// function markupForCalendar(data) {
-//   holydays.innerHTML = data
-//     .map(({ date, exchange, name, status }) => {
-//       return `<tr>
-//                     <td>${date}</td>
-//                     <td>${exchange}</td>
-//                     <td>${name}</td>
-//                     <td>${status}</td>
-//                 </tr>`;
-//     })
-//     .join('');
-// }
+import { BodyTr, HeadTr, Table, TableData, TableHead } from './Holidays.styled';
+import { nanoid } from 'nanoid';
 
 const Holidays = () => {
-  const [holidais, setHolidays] = useState([]);
-  marketHolidays()
-    .then(data => setHolidays(data))
-    .catch(console.log);
-  //   return (
-  //     <tr>
-  //       <td>${holidais.date}</td>
-  //       <td>${holidais.exchange}</td>
-  //       <td>${holidais.name}</td>
-  //       <td>${holidais.status}</td>
-  //     </tr>
-  //   );
+  const [holidays, setHolidays] = useState([]);
+
+  useEffect(() => {
+    marketHolidays()
+      .then(data => setHolidays(data))
+      .catch(console.log);
+  }, []);
+
+  return (
+    <Table>
+      <caption>Holidays</caption>
+      <thead>
+        <HeadTr>
+          <TableHead>Date</TableHead>
+          <TableHead>Exchange</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Status</TableHead>
+        </HeadTr>
+      </thead>
+      <tbody>
+        {holidays.map(holiday => (
+          <BodyTr key={nanoid()}>
+            <TableData>{holiday.date}</TableData>
+            <TableData>{holiday.exchange}</TableData>
+            <TableData>{holiday.name}</TableData>
+            <TableData>{holiday.status}</TableData>
+          </BodyTr>
+        ))}
+      </tbody>
+    </Table>
+  );
 };
 
 export default Holidays;
