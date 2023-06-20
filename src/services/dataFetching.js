@@ -52,12 +52,10 @@ export async function stockData(ticker) {
   }
 }
 
-export async function news() {
+export async function newsData() {
   try {
-    const response = await axios.get(
-      '/v2/reference/news?apiKey=UCdhsV2m_RTmkwybpkta6ZvaKFF7ZTpP'
-    );
-    console.log(response);
+    const response = await axios.get(`/v2/reference/news?apiKey=${API_KEY}`);
+    return response.data;
   } catch (error) {
     console.log(console.error());
   }

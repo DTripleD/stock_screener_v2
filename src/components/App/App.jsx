@@ -1,4 +1,4 @@
-import Holidays from 'components/Holidays/Holidays';
+import Holidays from 'components/HolidaysTable/HolidaysTable';
 import { AppWrapper, Button, Header, Input, StyledLink } from './App.styled';
 import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home/Home';
