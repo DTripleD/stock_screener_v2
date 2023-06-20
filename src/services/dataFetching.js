@@ -51,3 +51,14 @@ export async function stockData(ticker) {
     console.log(error);
   }
 }
+
+export async function news() {
+  try {
+    const response = await axios.get(
+      '/v2/reference/news?apiKey=UCdhsV2m_RTmkwybpkta6ZvaKFF7ZTpP'
+    );
+    console.log(response);
+  } catch (error) {
+    console.log(console.error());
+  }
+}
