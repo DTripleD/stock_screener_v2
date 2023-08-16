@@ -1,5 +1,12 @@
 import Holidays from 'components/HolidaysTable/HolidaysTable';
-import { AppWrapper, Button, Header, Input, StyledLink } from './App.styled';
+import {
+  AppWrapper,
+  Button,
+  Conteiner,
+  Header,
+  Input,
+  StyledLink,
+} from './App.styled';
 import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home/Home';
 import AllStocks from 'components/AllStocks/AllStocks';
@@ -36,13 +43,16 @@ export const App = () => {
           <StyledLink to="/holidays">Holidays</StyledLink>
         </nav>
       </Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/stocklist" element={<AllStocks />} />
-        <Route path="/stocklist/:stockId" element={<StockDetails />} />
-        <Route path="/holidays" element={<Holidays />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+
+      <Conteiner>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/stocklist" element={<AllStocks />} />
+          <Route path="/stocklist/:stockId" element={<StockDetails />} />
+          <Route path="/holidays" element={<Holidays />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Conteiner>
     </AppWrapper>
   );
 };
