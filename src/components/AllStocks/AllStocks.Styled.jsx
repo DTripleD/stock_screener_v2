@@ -41,7 +41,6 @@ export const TableData = styled.td`
   padding: 12px 15px;
 `;
 
-
 //////
 
 export const Container = styled.div`
@@ -50,7 +49,7 @@ export const Container = styled.div`
   gap: 16px;
 `;
 
-export const CardWrapper = styled.div`
+export const Stock = styled.li`
   border: 1px solid black;
   border-radius: 4px;
 
@@ -64,4 +63,12 @@ export const ProductName = styled.h3`
   margin-top: 8px;
   margin-bottom: 0;
   color: black;
+`;
+
+export const StockList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
 `;

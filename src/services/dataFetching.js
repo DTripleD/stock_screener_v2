@@ -60,3 +60,14 @@ export async function newsData() {
     console.log(console.error());
   }
 }
+
+export async function stockNews(ticker) {
+  try {
+    const response = await axios.get(
+      `/v2/reference/news?ticker=${ticker}&apiKey=${API_KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}

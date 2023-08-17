@@ -14,7 +14,7 @@ export const List = styled.ul`
 `;
 
 export const TitleLink = styled.a`
-  color: black;
+  color: rgb(222, 223, 229);
   /* text-decoration: none; */
 `;
 
@@ -28,4 +28,15 @@ export const Conteiner = styled.div`
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+export const Text = styled.p`
+  color: rgb(222, 223, 229);
+`;
+export const PageName = styled.h3`
+  color: rgb(222, 223, 229);
+`;
+
+export const Error = styled.h2`
+  color: rgb(222, 223, 229);
 `;

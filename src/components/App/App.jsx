@@ -13,6 +13,7 @@ import AllStocks from 'components/AllStocks/AllStocks';
 import { showStocks, stockData } from 'services/dataFetching';
 import StockDetails from 'pages/StocksDetails/StocksDetails';
 // import Stocks from 'components/Stocks/Stocks';
+import logo from '../../images/logo.png';
 
 export const App = () => {
   const handleSubmit = event => {
@@ -26,6 +27,10 @@ export const App = () => {
   return (
     <AppWrapper>
       <Header>
+        <div>
+          <img src={logo} alt="logo" height="50" width="50" />
+          <h3>TripleDTradingCo</h3>
+        </div>
         <div>
           <form onSubmit={handleSubmit}>
             <Input type="text" name="ticker" placeholder="Enter any stock" />
